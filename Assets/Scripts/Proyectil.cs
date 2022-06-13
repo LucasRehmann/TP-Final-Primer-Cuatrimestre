@@ -13,7 +13,7 @@ public class Proyectil : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += transform.forward * -0.2f;
+        transform.position += transform.forward * -0.5f;
     }
 
     void OnCollisionEnter(Collision col)
