@@ -6,12 +6,15 @@ public class Cannon : MonoBehaviour
 {
     public GameObject cannon;
     float tiemRecarga;
+    public AudioClip disparo;
+    AudioSource sourceAudio;
 
 
     // Start is called before the first frame update
     void Start()
     {
         tiemRecarga = 3;
+        sourceAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -30,6 +33,9 @@ public class Cannon : MonoBehaviour
             Instantiate(cannon, new Vector3(43f, -0.06f, 15.711f), new Quaternion(0, -90, 0, 90));
 
             tiemRecarga = 3;
+
+            sourceAudio.clip = disparo;
+            sourceAudio.Play();
         }
     }
 }

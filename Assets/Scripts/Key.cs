@@ -10,7 +10,7 @@ public class Key : MonoBehaviour
     public GameObject suficiente, insuficiente, perdiste;
     public GameObject Llave1, Llave2, Llave3, Llave4;
 
-    public AudioClip cerrado, abierto, llave;
+    public AudioClip cerrado, abierto, llave, plataforma;
 
     AudioSource sourceAudio;
 
@@ -41,6 +41,15 @@ public class Key : MonoBehaviour
                 col.gameObject.SetActive(false);
                 cuenta++;
                 sourceAudio.clip = llave;
+                sourceAudio.Play();
+            }
+        }
+
+        for (int i = 1; i <= 14; i++)
+        {
+            if (col.gameObject.name == "plataforma (" + i + ")")
+            {
+                sourceAudio.clip = plataforma;
                 sourceAudio.Play();
             }
         }
